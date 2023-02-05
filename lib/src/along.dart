@@ -11,7 +11,7 @@ Point along(LineString lineString, num distance, [Unit unit = Unit.kilometers]) 
       break;
     } else if (travelled >= distance) {
       final overshot = distance - travelled;
-      if (overshot != 0) {
+      if (overshot == 0) {
         return Point(coordinates: coords[i]);
       } else {
         final direction = bearingRaw(coords[i], coords[i - 1]) - 180;
